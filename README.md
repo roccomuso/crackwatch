@@ -2,7 +2,7 @@
 
 > Node.js unofficial client to Crackwatch.com API
 
-[Crackwatch.com](https://crackwatch.com) is keeps you updated with the crack status of the games you follow.
+[Crackwatch.com](https://crackwatch.com) keeps you updated with the crack status of the games you follow.
 
 ## Install
 
