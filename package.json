@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/roccomuso/crackwatch#readme",
   "dependencies": {
-    "node-fetch": "^2.1.2",
+    "node-fetch": "^2.2.0",
     "parse-torrent-title": "^1.2.0"
   }
 }
