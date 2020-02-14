@@ -33,6 +33,21 @@ getCracks()
 ]
 */
 
+getCracks({page: 2})
+  .then(console.log)
+  .catch(console.error)
+
+/*
+[ { groupName: 'PLAZA',
+    date: '2020-02-08T11:14:38+01:00',
+    title: 'Brass Brigade Battle of Arnhem',
+    size: '653 MB',
+    image: 'https://b2.crackwatch.com/file/crackwatch-temp/kvyw14wge.jpg',
+    version: undefined
+  },
+    ...
+*/
+
 getGames()
   .then(console.log)
   .catch(console.error)
@@ -68,16 +83,78 @@ getGames()
 ]
 */
 
+getGames({page: 1, is_aaa: true})
+  .then(console.log)
+  .catch(console.error)
+
+/*
+[ { _id: 'LvoDf7zbFnxEE4cKX',
+    title: 'Darkborn',
+    slug: 'darkborn',
+    releaseDate: '2020-12-31T10:00:00-05:00',
+    protections: [ 'steam' ],
+    versions: [],
+    image: 'https://b2.crackwatch.com/file/crackwatch-temp/ebdettti5.jpg',
+    imagePoster: 'https://b2.crackwatch.com/file/crackwatch-temp/xc42h5338.jpg',
+    isAAA: true,
+    NFOsCount: 0,
+    commentsCount: 63,
+    followersCount: 1845,
+    groups: [],
+    updatedAt: '2020-02-14T00:09:03.629Z',
+    url: 'https://crackwatch.com/game/darkborn'
+  },
+  {
+    _id: 'Yxdw56pLsp9APhy2M',
+    isAAA: true,
+    NFOsCount: 0,
+    commentsCount: 41,
+    followersCount: 1569,
+    protections: [ 'steam' ],
+    versions: [],
+    groups: [],
+    updatedAt: '2020-02-14T00:09:47.672Z',
+    title: 'Witchfire',
+    slug: 'witchfire',
+    releaseDate: '2020-12-31T02:00:00+02:00',
+    imagePoster: 'https://b2.crackwatch.com/file/crackwatch/posters/witchfire-poster-crack.jpeg',
+    image: 'https://b2.crackwatch.com/file/crackwatch/games/witchfire-crack.jpeg',
+    url: 'https://crackwatch.com/game/witchfire'
+  },
+    ...
+]
+*/
+
+
+
 ```
 
 ### Methods
 
 More info on the available API on [crackwatch API page](https://crackwatch.com/api).
 
-- `getCracks()`: Get latest cracks list.
-- `getGames()`: Get latest games list.
+- `getCracks()`: Get latest cracks list. It's equivalent a `getCracks({page: 0})`.
+- `getGames()`: Get latest games list. It's equivalent a `getGames({page: 0})`.
 
 Requests should be limited to a rate of 1 per second.
+
+### Options
+
+The default values are shown after each option key.
+
+```javascript
+
+{
+    page: 0,                   //The API sends you 30 games per page. Use page=0 for the first 30 games, page=1 for the nest 30 games, and so on...
+    sort_by: "release_date",   // Use sort_by=release_date to get games ordered by release date or sort_by=crack_date to get games ordered by crack date.
+    is_sort_inverted: (none),  // Use is_sort_inverted=true to invert the order of the list of games.
+    is_aaa: (none),            // Use is_aaa=true to only display popular AAA games. Use is_aaa=false to only display indie games.
+    is_released: (none),       // Use is_released=true to only display released games. Use is_released=false to only display upcoming games.
+    is_cracked: (none),         // Use is_cracked=true to only display cracked games. Use is_cracked=false to only display uncracked games.
+}
+
+
+```
 
 # Author
 
